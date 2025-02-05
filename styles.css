@@ -50,6 +50,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: slategray;
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* Contenu principal */
@@ -93,8 +94,6 @@ main {
     }
 }
 
-body {
-    animation: fadeIn 1s ease-in-out;
-}
+
 
 
