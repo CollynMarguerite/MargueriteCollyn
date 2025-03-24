@@ -35,7 +35,7 @@
 
 /* Ajustement du header */
 header {
-    padding-top: 55px; /* Décalage pour ne pas être caché par la barre */
+    padding-top: 52px; /* Décalage pour ne pas être caché par la barre */
 }
 
 header h1 {
