@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div class="top-bar">
+  <nav>
+    <a href="index.html">Retour à l'accueil<br></a>
+    <a href="sae1.html">Traiter des données structurées</a>
+    <a href="sae2.html">Mettre en œuvre une analyse descriptive<br></a>
+    <a href="sae3.html">Contextualiser et présenter des données<br></a>
+    <a href="sae5.html">Mettre en œuvre une analyse exploratoire</a>
+    <a href="sae6.html">Restituer et argumenter les résultats</a>
+    <a href="sae7.html">Développer un composant d'une solution décisionnelle</a>
+  </nav>
+</div>
+<header>
+  <h1>Automatiser le traitement de données multidimensionnelles</h1>
+  <p>L'automatisation est important dans l'importation de données pour faciliter l'importation et avoir des résultats plus rapides et efficaces pour l'analyse. Le traitement de données multidimensionnelles consiste à travailler sur des données provenant de différentes sources(base de données, fichier Excel ou csv, etc...). J'ai pu en faire l'expérience à mon stage chez Dalkia.<br></p>
+</header>
+<body>
+  <p>
+    Concrètement, il fallait faire le lien entre deux sources de données :
+    <ul>
+      <li>les demandes des clients, enregistrées dans un système interne,</li>
+      <li>et les mêmes demandes, après traitement automatique par un robot RPA (un logiciel qui simule des actions humaines comme cliquer, copier-coller, etc...).</li>
+    </ul>
+  </p>
+  
+  Voici un schéma représentant les différentes bases de données utilisées :<br>
+  <img src="schéma bdd site.png" width="600" height="400" alt="Schéma liaisons entre les source de données"/><br>
+  <p> Ici, Numéro = NumDI et Num CSC = Numéro de la demande.</p>
+  La base centrale, appelée <strong>BDD RPA</strong>, fait le lien entre les numéros de demandes d'origine (NumDI) et ceux générés par le robot (Num CSC), qu'on retrouve ensuite sur le site Dacrc.
+  </p>
+  
+  
+  <p>
+    Pour croiser ces données, j’ai utilisé la bibliothèque <code>pandas</code> en Python, qui permet notamment de faire des jointures (c’est-à-dire lier deux tableaux de données grâce à une colonne commune).<br>
+    <img src="merge_pandas.PNG" width="800" alt="Exemple de jointure avec pandas"/><br>
+    Les lignes contenant <code>pd.merge</code> permettent de relier les fichiers, et <code>.map</code> permet de traduire des statuts à l’aide de dictionnaires simples, comme ici :
+    <img src="map_dacrc.PNG" alt="Exemple de dictionnaire de mapping"/>
+  </p>
+  
+  <p>
+    Le but était de comparer les statuts des demandes pour s’assurer qu’ils sont cohérents entre les systèmes. Par exemple, si une demande est marquée « Traité » dans le système client, elle doit aussi être « Traité » côté Dacrc.
+    Le résultat final ressemble à ceci :<br>
+    <img src="resultats_final.PNG" alt="Résultat du contrôle de cohérence des statuts"/>
+  </p>
+  
+  La colonne Contrôle renvoit "OK" si les statut correspondent, "KO" sinon.<br>
+  Les demandes continuent d'augmenter et le robot traite donc ces demandes, les automaticiens n'ont plus qu'à lancer le script de manière récurente pour mettre à jour le fichier excel.<br>
+  <br>
+  Même si le script était simple à coder, j’ai appris une leçon importante : un bon développeur n’est pas seulement quelqu’un qui sait programmer, mais quelqu’un qui sait écrire du code clair, rapide et optimisé.
+Car lorsque les fichiers deviennent volumineux, chaque seconde compte : un script mal conçu peut coûter du temps et donc de l’argent.
+J’ai passé plus de temps à optimiser le script qu’à l’écrire, et c’est ce qui a vraiment fait la différence.</body>

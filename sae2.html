@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div class="top-bar">
+  <nav>
+    <a href="index.html">Retour à l'accueil<br></a>
+    <a href="sae1.html">Traiter des données structurées</a>
+    <a href="sae3.html">Contextualiser et présenter des données<br></a>
+    <a href="sae4.html">Automatiser le traitement de données multidimensionnelles</a>
+    <a href="sae5.html">Mettre en œuvre une analyse exploratoire</a>
+    <a href="sae6.html">Restituer et argumenter les résultats</a>
+    <a href="sae7.html">Développer un composant d'une solution décisionnelle</a>
+  </nav>
+</div>
+<header>
+  <h1>Mettre en œuvre une analyse descriptive</h1>
+  <p>
+    L’analyse descriptive consiste à résumer et visualiser les données afin d’en comprendre les principales caractéristiques.
+    Elle permet de détecter des tendances, des écarts, des valeurs atypiques, ou encore d’observer des relations entre les variables (comme la surface ou le prix d’un bien immobilier).
+    À l’aide du logiciel <strong>RStudio</strong>, j’ai réalisé plusieurs graphiques montrant la distribution des valeurs foncières 
+    dans deux zones géographiques : le 16<sup>e</sup> arrondissement de Paris et la ville d’Avignon.
+  </p>
+  <p>
+    Ce projet, mené à la fin du premier semestre, a mobilisé une grande partie des compétences acquises en statistiques, en visualisation de données, en nettoyage de données, 
+    et en interprétation des résultats.
+  </p>
+</header>
+
+<body>
+  <img src="image_sae2.png" alt="Histogramme des valeurs foncières à Paris et Avignon" class="image1"/>
+
+  <p>
+    Ce graphique compare les valeurs foncières dans les deux villes : les trois premières barres représentent les données du 16<sup>e</sup> arrondissement de Paris. 
+    On remarque immédiatement un écart important entre les deux zones, à tel point que les valeurs d’Avignon sont quasiment invisibles sur l’échelle choisie.
+  </p>
+
+  <img src="2image_sae2.png" alt="Nuage de points entre surface bâtie et nombre de pièces" class="image1"/>
+
+  <p>
+    Ce second graphique met en relation la <strong>surface réelle bâtie</strong> et le <strong>nombre de pièces principales</strong>. 
+    En tenant compte du contexte socio-économique (niveau de vie, capital immobilier, urbanisme, etc.), nous avons interprété ces écarts comme étant liés à 
+    des réalités territoriales très différentes : le 16<sup>e</sup> arrondissement de Paris et la ville d’Avignon n’ont ni la même densité urbaine, 
+    ni la même valeur foncière, ni les mêmes habitudes de logement.
+  </p>
+
+
+  <p>
+    L’un des points faibles de notre analyse a été le choix des échelles sur certains graphiques, qui rendaient difficile la comparaison entre les deux villes.
+    Nous aurions pu, par exemple, utiliser une échelle logarithmique ou créer des graphiques séparés pour mieux mettre en valeur les données d’Avignon.
+    De plus, certaines variables importantes comme la date de vente ou le type de bien (appartement, maison) n'ont pas été prises en compte, 
+    ce qui limite la précision de notre interprétation.
+  </p>
+  <p>
+    Ce projet nous a appris qu’une analyse descriptive ne se limite pas à produire des graphiques : il faut aussi savoir adapter les visualisations à la structure des données 
+    et au public cible. Il est facile de biaiser l’interprétation sans s’en rendre compte si l’on ne critique pas ses propres choix de représentation. 
+    Nous avons donc pris conscience de l’importance de la rigueur dans le traitement des données et de la clarté dans leur présentation.
+  </p>
+</body>
+

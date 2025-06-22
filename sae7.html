@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div class="top-bar">
+  <nav>
+    <a href="index.html">Retour à l'accueil<br></a>
+    <a href="sae1.html">Traiter des données structurées</a>
+    <a href="sae2.html">Mettre en œuvre une analyse descriptive<br></a>
+    <a href="sae3.html">Contextualiser et présenter des données<br></a>
+    <a href="sae4.html">Automatiser le traitement de données multidimensionnelles</a>
+    <a href="sae5.html">Mettre en œuvre une analyse exploratoire</a>
+    <a href="sae6.html">Restituer et argumenter les résultats</a>
+    
+  </nav>
+</div>
+<header>
+  <h1>Développer un composant d'une solution décisionnelle</h1>
+  <p>Développer un composant d'une solution décisionnelle consiste à concevoir une brique logicielle qui contribue à la collecte, au traitement, ou à l’analyse des données afin d’aider à la prise de décision. Ces composants peuvent inclure des interfaces d’acquisition de données, des algorithmes d’analyse, des visualisations, ou encore des systèmes d’automatisation comme des API ou des scripts intelligents. L’objectif est de transformer des données brutes en informations exploitables, le tout dans un cadre automatisé, structuré et réutilisable.</p>
+</header>
+
+<body>
+    <p>Dans le cadre de cette SAE appelé: Développement d'un composant d'une solution décisionelle, j’ai développé un script Python appelé app.py, utilisant le framework Flask. Ce composant a pour but de faciliter le classement automatique de transactions financières.</p>
+  <section id="composant-decisionnel">
+  <p>
+    Ce projet propose une interface web simple permettant à un utilisateur d’uploader un fichier de transactions 
+    (<strong>CSV</strong>, <strong>Excel</strong> ou <strong>JSON</strong>). </p>
+    <img src="sae7_1.png" width="700">
+  <p> 
+    Le script analyse ensuite la colonne 
+    <code>description</code> de chaque transaction et attribue une <strong>catégorie prédéfinie</strong> 
+    (loyer, salaire, alimentation, loisirs, etc.) en fonction de mots-clés. Les résultats sont retournés 
+    au format <strong>JSON</strong>.
+  </p>
+  
+
+  <h3>Fonctionnalités clés</h3>
+  <ul>
+    <li> Validation du format et des colonnes requises.</li>
+    <li> Traitement intelligent avec <code>pandas</code>.</li>
+    <li> Retour JSON des résultats catégorisés.</li>
+    <li> Support de requêtes <code>curl</code> pour automatiser les envois.</li>
+    <li> Suppression automatique des fichiers temporaires après analyse.</li>
+  </ul>
+
+  <p>
+    Ce composant peut être intégré dans un <strong>processus décisionnel financier</strong> pour aider à 
+    mieux comprendre les postes de dépenses ou de revenus de manière automatisée.
+  </p>
+</section>
+<p>
+  Ce projet m’a aidé à mieux comprendre comment un outil informatique peut aider à prendre des décisions. 
+  Le script que j’ai créé permet d’automatiser une tâche longue et répétitive, comme le classement des dépenses, 
+  de façon rapide et fiable. Il fonctionne bien, mais il pourrait encore être amélioré : par exemple, 
+  en utilisant l’intelligence artificielle pour mieux reconnaître les catégories, en ajoutant des graphiques 
+  pour visualiser les résultats, ou en enregistrant les données dans une base de données pour garder un historique. 
+  Même si c’est un projet simple, il montre comment un petit programme peut devenir un vrai outil utile 
+  dans une solution d’aide à la décision.
+</p>
+
+</body>

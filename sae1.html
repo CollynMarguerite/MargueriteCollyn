@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div class="top-bar">
+  <nav>
+    <a href="index.html">Retour à l'accueil<br></a>
+    <a href="sae2.html">Mettre en œuvre une analyse descriptive<br></a>
+    <a href="sae3.html">Contextualiser et présenter des données<br></a>
+    <a href="sae4.html">Automatiser le traitement de données multidimensionnelles</a>
+    <a href="sae5.html">Mettre en œuvre une analyse exploratoire</a>
+    <a href="sae6.html">Restituer et argumenter les résultats</a>
+    <a href="sae7.html">Développer un composant d'une solution décisionnelle</a>
+  </nav>
+</div>
+<header>
+  <h1>Traiter les données structurées</h1>
+</header>
+
+<body>
+  <p>
+    Les données que l’on reçoit ne sont pas toujours prêtes à être utilisées. Avant toute analyse, il est souvent nécessaire de passer par une étape de <strong>nettoyage</strong> : 
+    suppression des lignes contenant des valeurs manquantes, suppression des doublons, ou encore correction des erreurs de format.
+    Pour rendre les données plus lisibles et mieux structurées, on peut également créer une <strong>base de données relationnelle</strong> à partir d’un tableau Excel ou d’un fichier brut.
+  </p>
+
+  <p>
+    C’est ce que nous avons fait dans ce projet : à partir d’un tableau Excel initial, nous avons extrait plusieurs tables pour construire une base de données claire, cohérente, 
+    et interrogeable via des requêtes SQL.
+  </p>
+
+  <p><strong>Tableau d'origine :</strong></p>
+  <img src="1image_sae3.png" alt="Tableau de données original"/>
+
+  <p><strong>Quelques tables créées à partir du tableau initial :</strong></p>
+  <img src="2image_sae3.png" alt="Exemple de table : vins"/>
+  <img src="3image_sae3.png" alt="Exemple de table : appellations"/>
+
+  <p>
+    Ici, par exemple, la colonne <code>id_vin</code> permet de faire le lien avec la colonne <code>lib_vin</code> dans une autre table.
+    Ces liens entre tables sont essentiels dans une base de données relationnelle, car ils permettent d’effectuer des jointures et des requêtes efficaces.
+  </p>
+
+  <p>
+    Nous avons utilisé la commande <code>CREATE TABLE</code> pour créer les structures de nos tables, comme dans l'exemple ci-dessous :
+  </p>
+
+  <pre>
+CREATE TABLE vins (
+  lib_vin CHARACTER,
+  sous_reg_vin CHARACTER,
+  id_vin CHARACTER
+);</pre>
+
+  <p>
+    Ensuite, nous avons importé ces tables dans un serveur PostgreSQL (aujourd’hui désactivé) et inséré les différentes lignes de données.
+    Cela nous a permis de faire des requêtes précises, comme celle-ci :
+  </p>
+
+  <pre>
+SELECT *
+FROM vins
+WHERE sous_reg_vin = 'Beaujolais';
+  </pre>
+
+  <p>
+    Cette commande nous retourne tous les vins associés à la sous-région "Beaujolais".
+  </p>
+
+
+  <p>
+    Ce projet nous a montré l’importance d’avoir une base de données bien structurée pour garantir la qualité des analyses futures. 
+    Néanmoins, la phase de transformation du tableau initial en plusieurs tables a été plus complexe que prévu, car le tableau d'origine était assez volumineux et contenait beaucoup d'informations répétitives . 
+  </p>
+
+  <p>
+    Par ailleurs, nous avons aussi constaté que des erreurs simples dans la déclaration des types de données (par exemple, utiliser "CHARACTER" qui est un type de variable assez volumineux pour pas grand chose au lieu de types plus adaptés comme "VARCHAR" qui définient le nombre de caractères ou "INTEGER" qui correspond aux nombres entiers) 
+    peuvent ralentir le système ou engendrer des erreurs lors des requêtes.
+    Cette expérience nous a donc sensibilisés à l’importance de la rigueur dans la conception d’une base de données et de la précision dans l’écriture SQL.
+  </p>
+</body>
+
